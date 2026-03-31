@@ -1,73 +1,195 @@
-# React + TypeScript + Vite
+# 🌾 Krishi AI — Smart Farming Assistant for Kerala
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> An AI-powered farming assistant that provides personalized agricultural guidance in Malayalam — built for Kerala farmers.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📌 Project Name
 
-## React Compiler
+**Krishi AI — Smart Farming Assistant for Kerala**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ❗ Problem Statement
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Farmers in Kerala often struggle to get timely, personalized, and understandable agricultural guidance.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Most existing solutions:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- ❌ Provide generic advice
+- ❌ Are not available in Malayalam
+- ❌ Do not consider real-time weather conditions
+- ❌ Do not adapt to specific crops
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+As a result, farmers make decisions without proper guidance, leading to:
+
+- Reduced crop yield
+- Incorrect use of fertilizers
+- Crop diseases not treated in time
+
+---
+
+## 💡 Project Description
+
+**Krishi AI** is an AI-powered farming assistant designed specifically for Kerala farmers.
+
+It provides personalized farming advice in Malayalam by combining:
+
+- 🌾 Selected crop (Rice, Banana, Coconut, and more)
+- 🌦️ Real-time weather data (temperature + conditions)
+- 💬 User queries (typed or via image upload)
+- 🧠 Stored user preferences (crop memory via localStorage)
+
+### How It Works
+
+1. User selects one or more crops from their personal crop list
+2. Real-time weather is fetched automatically using device GPS (Open-Meteo API)
+3. User asks a question in Malayalam or English (or uploads a plant photo)
+4. AI processes the crop context, live weather, and query together
+5. Gemini AI generates simple, actionable advice in **Malayalam**
+
+### What Makes It Useful
+
+- ✅ Local language support (Malayalam)
+- ✅ Context-aware responses (adapts to crop + weather)
+- ✅ Personalized experience (remembers the user's crops)
+- ✅ Handles multiple crops simultaneously
+- ✅ Can detect crop mentions in chat and suggest adding them
+- ✅ Plant disease diagnosis via image upload
+- ✅ Simple, accessible UI designed for elderly farmers (44px+ touch targets)
+- ✅ Mobile-first design
+
+---
+
+## 🤖 Google AI Usage
+
+### Tools / Models Used
+
+| Tool | Usage |
+|------|-------|
+| **Gemini 2.5 Flash** | Core AI model for generating farming advice |
+| **@google/generative-ai SDK** | Official Node.js SDK for Gemini API integration |
+| **Gemini Vision (multimodal)** | Image analysis for plant disease diagnosis |
+
+### How Google AI Was Integrated
+
+Gemini 2.5 Flash is used as the central intelligence of Krishi AI. Every time a user sends a message, the app constructs a detailed context-aware prompt containing:
+
+- The user's **full crop list** (e.g., "Rice 🌾, Banana 🍌, Coconut 🥥")
+- The **currently focused crop** (if one is selected)
+- **Live weather data** (temperature + condition + location)
+- The **user's query** (text and/or image)
+
+The model is instructed to:
+- Always respond in **Malayalam**
+- Tailor advice to the specific crop if one is selected
+- Give broad multi-crop advice if no crop is focused
+- Diagnose plant disease and suggest remedies when an image is provided
+- Keep advice simple, practical, and step-by-step
+
+```ts
+// Example prompt structure sent to Gemini
+User Query: ${query}
+
+Context:
+* User's Total Farm Crops: Rice 🌾, Banana 🍌
+* Currently Focused Crop: Banana 🍌
+* Weather: 32°C, Partly Cloudy
+* Location: Kozhikode
+
+Rules:
+* Always respond in Malayalam.
+* Tailor advice strictly to the focused crop.
+* Give step-by-step, jargon-free advice.
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Proof of Google AI Usage
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+> 📂 Screenshots are located in the `/proof` folder of this repository.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Frontend Framework | React 18 + TypeScript (Vite) |
+| Styling | Tailwind CSS |
+| AI Model | Google Gemini 2.5 Flash |
+| AI SDK | @google/generative-ai |
+| Weather API | Open-Meteo (free, no key required) |
+| Geocoding | Open-Meteo Geocoding API |
+| Location | Browser Geolocation API |
+| Icons | Lucide React |
+| State Persistence | localStorage (custom hook) |
+
+---
+
+## 📁 Project Structure
+
 ```
+krishi-ai/
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── Header.tsx          # App header with weather badge
+│   │   ├── CropSelector.tsx    # Crop chip selector with add/remove
+│   │   ├── WeatherWidget.tsx   # Live weather + location switcher
+│   │   └── ChatInterface.tsx   # Full chat UI with image upload
+│   ├── services/
+│   │   ├── gemini.ts           # Gemini AI integration
+│   │   └── weather.ts          # Open-Meteo weather + geocoding
+│   ├── hooks/
+│   │   └── useLocalStorage.ts  # Persistent state hook
+│   ├── App.tsx                 # Main app + state management
+│   └── main.tsx
+├── .env                        # API key (not committed)
+├── .gitignore
+└── README.md
+```
+
+---
+
+## ⚙️ Installation Steps
+
+```bash
+# Clone the repository
+git clone https://github.com/MuneebMoosa/build-with-ai.git
+
+# Go to project folder
+cd build-with-ai
+
+# Install dependencies
+npm install
+
+# Create environment file
+cp .env.example .env
+# Then open .env and add your Gemini API key:
+# VITE_GEMINI_API_KEY=your_key_here
+
+# Run the project
+npm run dev
+```
+
+> 🔑 Get your free Gemini API key from [Google AI Studio](https://aistudio.google.com/app/apikey)
+
+---
+
+## 🌐 Key Features
+
+- **🌍 Auto GPS Location** — Automatically detects your location and fetches real-time local weather
+- **📍 Manual Location Switch** — Tap the weather badge to search any city worldwide
+- **🌱 Smart Crop Detection** — AI detects crop names in your chat and suggests adding them to your list
+- **📸 Image Disease Diagnosis** — Upload a photo of a sick plant for instant diagnosis in Malayalam
+- **💾 Persistent Memory** — Your crops and active selection are saved across sessions
+- **📱 Mobile-First UI** — Designed for Kerala farmers using smartphones
+
+---
+
+## 🙏 Built With
+
+- [Google Gemini API](https://ai.google.dev/)
+- [Open-Meteo](https://open-meteo.com/)
+- [React + Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Lucide Icons](https://lucide.dev/)
