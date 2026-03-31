@@ -3,6 +3,9 @@
 > An AI-powered farming assistant that provides personalized agricultural guidance in Malayalam — built for farmers.
 
 ---
+##  Team Name
+
+Ctrl C Ctrl V
 
 ##  Project Name
 
