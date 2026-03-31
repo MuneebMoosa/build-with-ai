@@ -4,13 +4,13 @@
 
 ---
 
-## 📌 Project Name
+##  Project Name
 
 **Krishi AI — Smart Farming Assistant for Kerala**
 
 ---
 
-## ❗ Problem Statement
+## Problem Statement
 
 Farmers in Kerala often struggle to get timely, personalized, and understandable agricultural guidance.
 
@@ -29,7 +29,7 @@ As a result, farmers make decisions without proper guidance, leading to:
 
 ---
 
-## 💡 Project Description
+## Project Description
 
 **Krishi AI** is an AI-powered farming assistant designed specifically for Kerala farmers.
 
@@ -115,7 +115,7 @@ Rules:
 
 
 ##  Demo Video
-
+  https://drive.google.com/file/d/1yseHBl4aXsuHxv3F5e-h7SeaKjahdfmC/view?usp=drive_link
 
 ## Installation Steps
 ```bash
