@@ -5,7 +5,7 @@
 ---
 ##  Team Name
 
-Ctrl C Ctrl V
+**Ctrl C Ctrl V**
 
 ##  Project Name
 
@@ -119,7 +119,7 @@ Rules:
 
 
 ##  Demo Video
-  https://drive.google.com/file/d/1yseHBl4aXsuHxv3F5e-h7SeaKjahdfmC/view?usp=drive_link
+  [Watch demo : https://drive.google.com/file/d/1yseHBl4aXsuHxv3F5e-h7SeaKjahdfmC/view?usp=drive_link]
 
 ## Installation Steps
 ```bash
