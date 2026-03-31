@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+:root {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f0fdf4; /* A soft light green background */
+  color: #1a2e05; /* Dark typography for contrast */
+}
