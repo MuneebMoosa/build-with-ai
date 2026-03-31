@@ -1,6 +1,6 @@
 # 🌾 Krishi AI — Smart Farming Assistant for Kerala
 
-> An AI-powered farming assistant that provides personalized agricultural guidance in Malayalam — built for Kerala farmers.
+> An AI-powered farming assistant that provides personalized agricultural guidance in Malayalam — built for farmers.
 
 ---
 
@@ -61,7 +61,7 @@ It provides personalized farming advice in Malayalam by combining:
 
 ---
 
-## 🤖 Google AI Usage
+##  Google AI Usage
 
 ### Tools / Models Used
 
@@ -109,49 +109,15 @@ Rules:
 
 ---
 
-## 🛠️ Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
-| Frontend Framework | React 18 + TypeScript (Vite) |
-| Styling | Tailwind CSS |
-| AI Model | Google Gemini 2.5 Flash |
-| AI SDK | @google/generative-ai |
-| Weather API | Open-Meteo (free, no key required) |
-| Geocoding | Open-Meteo Geocoding API |
-| Location | Browser Geolocation API |
-| Icons | Lucide React |
-| State Persistence | localStorage (custom hook) |
+##  Screenshots
 
----
 
-## 📁 Project Structure
 
-```
-krishi-ai/
-├── public/
-├── src/
-│   ├── components/
-│   │   ├── Header.tsx          # App header with weather badge
-│   │   ├── CropSelector.tsx    # Crop chip selector with add/remove
-│   │   ├── WeatherWidget.tsx   # Live weather + location switcher
-│   │   └── ChatInterface.tsx   # Full chat UI with image upload
-│   ├── services/
-│   │   ├── gemini.ts           # Gemini AI integration
-│   │   └── weather.ts          # Open-Meteo weather + geocoding
-│   ├── hooks/
-│   │   └── useLocalStorage.ts  # Persistent state hook
-│   ├── App.tsx                 # Main app + state management
-│   └── main.tsx
-├── .env                        # API key (not committed)
-├── .gitignore
-└── README.md
-```
+##  Demo Video
 
----
 
-## ⚙️ Installation Steps
-
+## Installation Steps
 ```bash
 # Clone the repository
 git clone https://github.com/MuneebMoosa/build-with-ai.git
@@ -185,11 +151,3 @@ npm run dev
 - **📱 Mobile-First UI** — Designed for Kerala farmers using smartphones
 
 ---
-
-## 🙏 Built With
-
-- [Google Gemini API](https://ai.google.dev/)
-- [Open-Meteo](https://open-meteo.com/)
-- [React + Vite](https://vitejs.dev/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Lucide Icons](https://lucide.dev/)
