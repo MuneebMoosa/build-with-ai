@@ -140,14 +140,3 @@ npm run dev
 > 🔑 Get your free Gemini API key from [Google AI Studio](https://aistudio.google.com/app/apikey)
 
 ---
-
-## 🌐 Key Features
-
-- **🌍 Auto GPS Location** — Automatically detects your location and fetches real-time local weather
-- **📍 Manual Location Switch** — Tap the weather badge to search any city worldwide
-- **🌱 Smart Crop Detection** — AI detects crop names in your chat and suggests adding them to your list
-- **📸 Image Disease Diagnosis** — Upload a photo of a sick plant for instant diagnosis in Malayalam
-- **💾 Persistent Memory** — Your crops and active selection are saved across sessions
-- **📱 Mobile-First UI** — Designed for Kerala farmers using smartphones
-
----
